@@ -12,7 +12,17 @@ const assertArraysEqual = function(arr1, arr2) {
   console.log(`✅✅✅ Assertion Passed: ${arr1} === ${arr2}`);
 };
 
+const letterPositions = function(sentence) {
+  const results = {};
+  sentence = sentence.split(' ').join('');
+  for (let letter of sentence) {
+    results[letter] = [];
+  }
+  for (let index in sentence) {
+    results[sentence[index]].push(Number(index));
+  }
+  return results;
+};
 
-console.log(assertArraysEqual([1,2,3], [1,2,4]));
-assertArraysEqual([1,2,3], [1,2,4]);
-assertArraysEqual([1,2,3], [1,2,"3"]);
+
+assertArraysEqual(letterPositions('hello')['h'], [0]);
