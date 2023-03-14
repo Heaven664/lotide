@@ -20,7 +20,7 @@ const eqObjects = function(object1, object2) {
   }
   for (const key of firstArrayKeys) {
     if (!Array.isArray(object1[key]) && typeof object1[key] === 'object') {
-      return eqObjects(object1[key], object2[key])
+      return eqObjects(object1[key], object2[key]);
     } else if (Array.isArray(object1[key])) {
       if (!eqArrays(object1[key], object2[key])) {
         return false;
